@@ -9,6 +9,8 @@ ownerRouter.post("/change-role", protect, changeRoleToOwner)
 
 // The 'upload.single("image")' middleware is used to handle file uploads
 // The 'image' is the name of the file input in the form
+// This upload middleware will store the file in the 'uploads' folder
+// The file will be accessible in the request object as 'req.file'
 ownerRouter.post("/add-car", upload.single("image"), protect, addCar)
 
 ownerRouter.get("/cars", protect, getOwnerCars)
